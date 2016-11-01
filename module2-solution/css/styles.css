@@ -1,18 +1,35 @@
+	
+	/* 
+	Set box sizing for all so that element float properly as per width
+	*/
 	*{
 		box-sizing: border-box;
 	}
 
+	/*
+	Text 'Our Menu' shall be centered
+	*/
 	h1{
 		text-align: center;
 	}
 
 
+	/*
+	This is the outermost div which holds the gray columns.
+	Set 10px margin so as to have white space between columns.
+	*/
 	.grayBox{
 		margin: 10px;
 		background-color: gray;
-		border: 2px black solid;
+		border: 1px black solid;
 	}
 
+	/*
+	This is the title at the top right corner.
+	Use a bigger bold font as its a title.
+	Draw border only on 3 sides as the top border is already drawn by grayBox.
+	Also add some padding on left and right side of the text.
+	*/
 	.labelBox{
 		position: absolute;
 		right: 10px;
@@ -20,20 +37,29 @@
 		text-align: center;
 		font-size: 18px;
 		font-weight: bold;
-		border-left: 2px solid black;
-		border-right: 2px solid black;
-		border-bottom: 2px solid black;
+		border-left: 1px solid black;
+		border-right: 1px solid black;
+		border-bottom: 1px solid black;
 		
 		padding-left: 20px;
 		padding-right: 20px;
 	}
 
+
+	/*
+	This is where actual description is displayed.
+	Use a slightly smaller font so that title becomes prominent.
+	*/
 	.contentBox{
 		padding-top: 24px;
 		padding-left: 10px;
 		font-size: 14px;
 	}
 
+	/*
+	Generic properties for all columns.
+	Since we want everything to move relative to this set position as relative.
+	*/
 	.col{
 		position: relative;
 		float: left;
@@ -41,37 +67,68 @@
 	}
 
 
+	/*
+	Title of first box.
+	*/
 	div#col1-l1{
 		background-color: #D59898;
 	}
 
+	/*
+	Title of second box.
+	Text color shall be white for this box.
+	*/
 	div#col2-l1{
 		background-color: #C14543;
 		color: white;
 	}
 
+	/*
+	Title of third box.
+	*/
 	div#col3-l1{
 		background-color: #E5D198;
 	}
 
+	/*
+	Set the column layout for desktop devices
+	*/
 	@media (min-width: 992px){
+			/*
+			Use 3 columns spaced equally.
+			*/
 			.col-lg-4{
 			width: 33.33%;
 		}
 	}
 
+	/*
+	Set the column layout for tab devices
+	*/
 	@media (min-width: 768px) and (max-width: 991px){
+			/*
+			First 2 columns shall be side by side.
+			*/
 			.col-md-6{
 				width: 50%;
 			}
 
+			/*
+			Last column should be in a line by itself.
+			*/
 			.col-md-12{
 				width: 100%;
 			}			
 
 	}
 
+	/*
+	Set column layout for mobile devices.
+	*/
 	@media (max-width: 767px){
+		/*
+		Each column on individual line.
+		*/
 		.col-sm-12{
 			width: 100%;
 		}
